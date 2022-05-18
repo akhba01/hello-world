@@ -1,5 +1,5 @@
 import Link from "next/link";
-function ProductList() {
+function ProductList({ productId = 100 }) {
   return (
     <>
       <Link href="/">
@@ -16,8 +16,13 @@ function ProductList() {
         </Link>
       </h2>
       <h2>
-        <Link href="/product/3">
+        <Link href="/product/3" replace>
           <a>Product 3</a>
+        </Link>
+      </h2>
+      <h2>
+        <Link href={`/product/${productId}`}>
+          <a>Product {productId}</a>
         </Link>
       </h2>
     </>
